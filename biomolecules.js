@@ -1,3 +1,6 @@
+// creates some cool dialogues about biology !!!
+
+
 var QuizGrade = 0;
 alert("Note: Always answer with a capital letter where applicable");
 var Question1 = prompt("How many types of biomolecules are there?");
