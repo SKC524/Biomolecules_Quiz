@@ -5,6 +5,7 @@ to do:
 **report score after middle of quiz quit   
 **style button
 **extra questions based on wrong answers
+*** don't require singular or plurals
 
 -->
 
@@ -157,7 +158,7 @@ if (Question7 == "true")	{
 var Question8 = prompt("True/false: Dehydration refers to the loss of two hydrogens and an oxygen in the process of making more complex carbohydrates");	
 if (Question8 == null)	{  return;  }
 Question8 = Question8.toLowerCase();
-if (Question8 == "True")	{
+if (Question8 == "true")	{
 	alert("Good job");
 	QuizGrade += 1;
 	}
@@ -169,7 +170,7 @@ if (Question8 == "True")	{
 var Question9 = prompt("True/false: proteins make up the boundary called the cell membrane");
 if (Question9 == null)  {  return;  }
 Question9 = Question9.toLowerCase();
-if (Question9 == "False")	{
+if (Question9 == "false")	{
 	alert("Correct! Lipids make up the boundary, not proteins.");
 	QuizGrade += 1;
 	}
@@ -181,7 +182,7 @@ if (Question9 == "False")	{
 var Question10 = prompt("True/false: Polysaccharides are always made up of three monomers");
 if (Question == null)	{	return;    }
 Question10 = Question10.toLowerCase();
-if (Question10 == "False")	{
+if (Question10 == "false")	{
 	alert("Correct! Way to end strong!");
 	QuizGrade += 1;
 	}
