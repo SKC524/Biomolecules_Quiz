@@ -1,0 +1,139 @@
+body {
+    font-family: 'Courier New', Courier;
+    background-color: rgb(45,45,45);
+    background-image: url("../img/header-1.jpg");
+    background-repeat: no-repeat;
+}
+
+.body-info {
+  /*  outline: black dotted thick;*/
+    color: white;
+    text-shadow: 10px 10px 15px rgba(0,0,0, 1);
+}
+
+.body-description {
+/*    outline: black dotted thick;*/
+    color: white;
+    text-shadow: 5px 5px 10px rgba(0,0,0,1);
+}
+
+li > img:hover {
+    opacity: 0.8 !important;
+    filter: invert(20);
+}
+
+.button {
+    border: 0px solid black;
+}
+
+.buttons-container {
+   /* outline: black dotted thick;*/
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    word-wrap: break-word;
+    float: left;
+}
+
+.button-label {
+    font-family: 'Courier New', Courier;
+    color: rgb(255, 80, 80);
+    align: center;
+    letter-spacing: 3px;
+}
+
+.spacer {
+/*    outline: black dotted thick;*/
+}
+
+.social-container {
+/*    outline: black dotted thick;*/
+    text-align: center;
+    margin-top: 40px;
+    height: 100px;
+    float: left;
+    position: relative;
+    bottom: -400px;
+}
+
+.social-text-top {
+    font-weight: 500;
+    color: rgb(160,160,160);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.social-text-bottom {
+    margin-bottom:5px;
+    color: rgb(160,160,160);
+}
+
+.social-icon {
+	padding: 0px 1px 0px 1px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.highlight {
+    font-weight: 700;
+    color: rgb(255, 80, 80);
+    text-shadow: 10px 10px 20px rgba(0,0,0,.5);
+}
+
+.no-close, .ui-dialog-titlebar-close {
+    display: none;
+}
+
+.dialog > label {
+    font-weight: 600;
+    color: rgb(60,60,60);
+}
+
+.ui-dialog, .ui-dialog-buttonpane, button.ui-button {
+    font-family: 'Courier New', Courier;
+    background: rgb(140,140,140);
+}
+
+.ui-widget-header {
+    background: rgb(144,210,172);
+    margin: 5px;
+    border-color: rgb(144,210,172);
+}
+
+.ui-dialog-titlebar {
+    font-size: 25px;
+    font-weight: 300;
+    color: white;
+}
+
+.ui-widget-content {
+    font-size: 20px;
+    color: white;
+}
+
+.ui-dialog-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+  margin-left:5px;
+  width: 8px;
+  height: 6px;
+}
+
+.ui-dialog-content::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.ui-dialog-buttonpane {
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
