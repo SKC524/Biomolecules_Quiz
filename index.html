@@ -1,10 +1,12 @@
-// to do:
+<!--
+@ Authors: Victoria Chistolini, Samuel Chistolini
+to do:
 
+**report score after middle of quiz quit   
+**style button
+**extra questions based on wrong answers
 
-// figure out break statements
-// style button
-// studying recommendation (added hopefully)
-//extra questions based on wrong answers
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,11 +56,18 @@
 
 // creates some cool dialogues about biology !!!
 
+
 function Quiz ()	{
-var StudyingTip = " I would recommend studying: "
+var StudyingTip = " I would recommend studying: ";
+
 var QuizGrade = 0;
-alert("Note: Always answer with a capital letter where applicable");
+
+if(confirm("Would you like to start the biomolecules quiz?") == false)	{
+return;
+}
+
 var Question1 = prompt("How many types of biomolecules are there?");
+if (Question1 == null)	{ return;}
 if (Question1 == 4)	{
 	alert("That is correct");
 	QuizGrade += 1;
@@ -68,8 +77,10 @@ if (Question1 == 4)	{
 	StudyingTip += "Biomolecules overview, ";
 	}
 	
-var Question2 = prompt("What is the name of the simplest sugar")
-if (Question2 == "Glucose")	{
+var Question2 = prompt("What is the name of the simplest sugar");
+if (Question2 == null)	{ return;	}
+Question2 = Question2.toLowerCase();
+if (Question2 == "glucose")	{
 	alert("That is correct");
 	QuizGrade += 1;
 	}
@@ -78,13 +89,14 @@ if (Question2 == "Glucose")	{
 	QuizGrade += 1;
 	}
 	else {
-	alert("Did you start with a lowercase letter?");
 	alert("Oops that's incorrect, the correct answer was either fructose or glucose.");
 	StudyingTip += "Carbohydrates overview, ";
 	}
 	
 var Question3 = prompt("What is the monomer for proteins [plural word]");
-if (Question3 == "Amino acids")	{
+if (Question3 == null)	{ return; }
+Question3 = Question3.toLowerCase();
+if (Question3 == "amino acids")	{
 	alert("That is correct");
 	QuizGrade += 1;
 	}
@@ -94,7 +106,9 @@ if (Question3 == "Amino acids")	{
 	}
 	
 var Question4 = prompt("What type of carbohydrate is made up of two of the simplest sugar molecules bonded together?[will not accept plural version]");
-if (Question4 == "Disaccharide")	{
+Question4 = Question4.toLowerCase();
+if (Question4 == null)	{ return; }
+if (Question4 == "disaccharide")	{
 	alert("Good - tough question");
 	QuizGrade += 1;
 	}
@@ -105,7 +119,9 @@ if (Question4 == "Disaccharide")	{
 	
 alert("Halfway there!");
 var Question5 = prompt("true/false: Carbon has 4 valance electrons, enabling it to engage in 4 separate covalent bonds.");
-if (Question5 == "True")	{
+if (Question5 == null)	{ return;  }
+Question5 = Question5.toLowerCase();
+if (Question5 == "true")	{
 	alert("That's correct");
 	QuizGrade += 1;
 	}
@@ -115,7 +131,9 @@ if (Question5 == "True")	{
 	}
 	
 var Question6 = prompt("true/false: Glycogen is an example of a disaccharide.");
-if (Question6 == "False")	{
+if (Question6 == null)	{ return;  }
+Question6 = Question6.toLowerCase();
+if (Question6 == "false")	{
 	alert("Your answer was correct.");
 	QuizGrade += 1;
 	}
@@ -125,7 +143,9 @@ if (Question6 == "False")	{
 	}
 	
 var Question7 = prompt("True/false: Proteins aid in chemical signaling");
-if (Question7 == "True")	{
+if (Question7 == null)	{  return;  }
+Question7 = Question7.toLowerCase();
+if (Question7 == "true")	{
 	alert("Good job!");
 	QuizGrade += 1;
 	}
@@ -135,6 +155,8 @@ if (Question7 == "True")	{
 	}
 	
 var Question8 = prompt("True/false: Dehydration refers to the loss of two hydrogens and an oxygen in the process of making more complex carbohydrates");	
+if (Question8 == null)	{  return;  }
+Question8 = Question8.toLowerCase();
 if (Question8 == "True")	{
 	alert("Good job");
 	QuizGrade += 1;
@@ -145,6 +167,8 @@ if (Question8 == "True")	{
 	}
 
 var Question9 = prompt("True/false: proteins make up the boundary called the cell membrane");
+if (Question9 == null)  {  return;  }
+Question9 = Question9.toLowerCase();
 if (Question9 == "False")	{
 	alert("Correct! Lipids make up the boundary, not proteins.");
 	QuizGrade += 1;
@@ -155,13 +179,15 @@ if (Question9 == "False")	{
 	}
 
 var Question10 = prompt("True/false: Polysaccharides are always made up of three monomers");
+if (Question == null)	{	return;    }
+Question10 = Question10.toLowerCase();
 if (Question10 == "False")	{
 	alert("Correct! Way to end strong!");
 	QuizGrade += 1;
 	}
 	else	{
 	alert("Incorrect, poly means many.");
-	StudyingTip += "Poly/mono definitions."
+	StudyingTip += "Poly/mono definitions.";
 	}
 var FinalQuizGrade = QuizGrade * 10;
 alert("RESULTS: " + FinalQuizGrade + "%");	
@@ -171,6 +197,7 @@ alert("Studying tips based on what was answered incorrectly, in chronological or
 else	{
 alert("Great job! You got everything right!!");
 }
+
 }
    
    
