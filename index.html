@@ -3,8 +3,8 @@
 
 // figure out break statements
 // style button
-// studying recommendation
-
+// studying recommendation (added hopefully)
+//extra questions based on wrong answers
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +55,7 @@
 // creates some cool dialogues about biology !!!
 
 function Quiz ()	{
-var StudyingTip = "I would recommend studying: "
+var StudyingTip = " I would recommend studying: "
 var QuizGrade = 0;
 alert("Note: Always answer with a capital letter where applicable");
 var Question1 = prompt("How many types of biomolecules are there?");
@@ -100,7 +100,7 @@ if (Question4 == "Disaccharide")	{
 	}
 	else	{
 	alert("Better luck next time. The correct answer was Disaccharide (spelling counts - sorry)");
-	StudyingTip += "Carbohydrates overview, "
+	StudyingTip += "Carbohydrate disaccharide section, "
 	}
 	
 alert("Halfway there!");
@@ -111,6 +111,7 @@ if (Question5 == "True")	{
 	}
 	else	{
 	alert("Oops the answer was true");
+	StudyingTip += "4 biomolecules overview , ";
 	}
 	
 var Question6 = prompt("true/false: Glycogen is an example of a disaccharide.");
@@ -120,6 +121,7 @@ if (Question6 == "False")	{
 	}
 	else	{
 	alert("Oops the statement was false; glycogen is a polysaccharide.");
+	StudyingTip += "Carbohydrates polymer section, ";
 	}
 	
 var Question7 = prompt("True/false: Proteins aid in chemical signaling");
@@ -129,6 +131,7 @@ if (Question7 == "True")	{
 	}
 	else	{
 	alert("The correct answer was true");
+	StudyingTip += "Protein functions, ";
 	}
 	
 var Question8 = prompt("True/false: Dehydration refers to the loss of two hydrogens and an oxygen in the process of making more complex carbohydrates");	
@@ -138,6 +141,7 @@ if (Question8 == "True")	{
 	}
 	else	{
 	alert("That was a tricky one.. it was true.");
+	StudyingTip += "Dehydration synthesis, ";
 	}
 
 var Question9 = prompt("True/false: proteins make up the boundary called the cell membrane");
@@ -146,7 +150,8 @@ if (Question9 == "False")	{
 	QuizGrade += 1;
 	}
 	else	{
-	alert("Sorry - trick question there, lipids make up the cell membrane.");
+	alert("Sorry - trick question there, lipids make up the cell membrane, not proteins.");
+	StudyingTip += "Phospholipid bilayer diagram and protein functions, ";
 	}
 
 var Question10 = prompt("True/false: Polysaccharides are always made up of three monomers");
@@ -156,10 +161,16 @@ if (Question10 == "False")	{
 	}
 	else	{
 	alert("Incorrect, poly means many.");
+	StudyingTip += "Poly/mono definitions."
 	}
-var FinalQuizGrade = QuizGrade*10;
+var FinalQuizGrade = QuizGrade * 10;
 alert("RESULTS: " + FinalQuizGrade + "%");	
-
+if(QuizGrade < 10)	{
+alert("Studying tips based on what was answered incorrectly, in chronological order as they appeared in the quiz:" + StudyingTip);
+}
+else	{
+alert("Great job! You got everything right!!");
+}
 }
    
    
