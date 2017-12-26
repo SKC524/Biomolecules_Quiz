@@ -1,8 +1,16 @@
+// to do:
+
+
+// figure out break statements
+// style button
+// studying recommendation
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title> Victoria Chistolini </title>
+    <title> Samuel K Chistolini </title>
 
     <!--Favicon-->
     <link rel="icon" href="img/cd.png">
@@ -25,19 +33,7 @@
     <!-- Font family -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-105300029-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <!-- 										-->
-    <!-- 										-->
-    <!-- 										-->
 
 </head>
 
@@ -46,129 +42,128 @@
     <div class="container">
         <div class="row">
             <div class="seven columns body-info">
-                <p class="body-name"> Victoria Chistolini </p>
-                <p class="body-tagline"> I am a&nbsp;<span class="txt-rotate"> </span> </p>
+                <p class="body-name"> Bio Quiz </p>
             </div>
-            <div class="five columns body-description">
-                <p> Hello, I am a senior studying <span class="highlight">computer science</span> at Colby College. I am a programmer with specific skills in systems biology, statistical modeling and object oriented design. I am looking for a startup focused on computational biology/bio tech, computer vision/robotics, mathematical modeling, linguistics.  </p>
-            </div>
+          
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns spacer"></div>
-        </div>
-    </div>
+<button type="button" onclick= Quiz() >Biomolecules Quiz!</button>
 
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns">
-                <ul class="buttons-container"></ul>
-            </div>
-        </div>
-    </div>
+<script>
 
-    <div class="container">
-        <div class="row">
-            <div class="twelve columns social-container">
-                <p class="social-text-top"> Resume and Links! </p>
-                <!-- <a href="#"> <img class="social-icon" src="img/Email.png"/> </a>-->
-                <a target="_" href="resume.pdf"> <img class="social-icon" src="img/Resume.png"/> </a>
-                <a target="_" href="https://www.linkedin.com/in/victoria-chistolini-3575b5143/"> <img class="social-icon" src="img/LinkedIn.png"/> </a>
-                <a target="_" href="https://github.com/victoriachistolini"> <img class="social-icon" src="img/GitHub.png"/> </a>
-                <!-- <a target="_" href="https://www.strava.com/athletes/kimberlytangha"> <img class="social-icon" src="img/Strava.png"/> </a> -->
-                <p class="social-text-bottom"> Made with ♥ by KHA</a> </p>
-            </div>
-        </div>
-    </div>
+// creates some cool dialogues about biology !!!
 
-    <div class="hidden">
-        <div class="dialog" id="Courses" title="Courses">
-            <label> Computer Science </label>
-            <li> CS231: Data Structures and Algorithms </li>
-            <li> CS232: Computer Organization </li>
-            <li> CS251: Data Analysis and Visualization </li>
-            <li> CS361: Object Oriented Design </li>
-            <li> CS375: Analysis of Algorithms </li>
-            <li> CS336: Parallel and Distributed Processing </li>
-            <li> CS341: Systems Biology  </li>
-            
-            <label> Mathematics and Statistics </label>
-            <li> MA122: Multivariable Calculus  </li>
-            <li> MA262: Vector Calculus  </li>
-            <li> MA253: Linear Algebra  </li>
-            <li> MA274: Mathematical Reasoning </li>
-            <li> MA212: Data Science/Statistical Methods  </li>
-            <li> MA357: Number Theory  </li>
-            <li> MA321: Applied Regression Modeling  </li>
-            <li> MA306: Topics in Epidemiology  </li>
-            <li> MA334: Numerical Analysis  </li>
-            <li> MA381: Mathematical Statistics and Probability  </li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        </div>
+function Quiz ()	{
+var StudyingTip = "I would recommend studying: "
+var QuizGrade = 0;
+alert("Note: Always answer with a capital letter where applicable");
+var Question1 = prompt("How many types of biomolecules are there?");
+if (Question1 == 4)	{
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops that's incorrect. The correct answer was 4.");
+	StudyingTip += "Biomolecules overview, ";
+	}
+	
+var Question2 = prompt("What is the name of the simplest sugar")
+if (Question2 == "Glucose")	{
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else if (Question2 == "fructose"){
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else {
+	alert("Did you start with a lowercase letter?");
+	alert("Oops that's incorrect, the correct answer was either fructose or glucose.");
+	StudyingTip += "Carbohydrates overview, ";
+	}
+	
+var Question3 = prompt("What is the monomer for proteins [plural word]");
+if (Question3 == "Amino acids")	{
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops that's incorrect, the correct answer was amino acids.");
+	StudyingTip += "Proteins overview, ";
+	}
+	
+var Question4 = prompt("What type of carbohydrate is made up of two of the simplest sugar molecules bonded together?[will not accept plural version]");
+if (Question4 == "Disaccharide")	{
+	alert("Good - tough question");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Better luck next time. The correct answer was Disaccharide (spelling counts - sorry)");
+	StudyingTip += "Carbohydrates overview, "
+	}
+	
+alert("Halfway there!");
+var Question5 = prompt("true/false: Carbon has 4 valance electrons, enabling it to engage in 4 separate covalent bonds.");
+if (Question5 == "True")	{
+	alert("That's correct");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops the answer was true");
+	}
+	
+var Question6 = prompt("true/false: Glycogen is an example of a disaccharide.");
+if (Question6 == "False")	{
+	alert("Your answer was correct.");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops the statement was false; glycogen is a polysaccharide.");
+	}
+	
+var Question7 = prompt("True/false: Proteins aid in chemical signaling");
+if (Question7 == "True")	{
+	alert("Good job!");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("The correct answer was true");
+	}
+	
+var Question8 = prompt("True/false: Dehydration refers to the loss of two hydrogens and an oxygen in the process of making more complex carbohydrates");	
+if (Question8 == "True")	{
+	alert("Good job");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("That was a tricky one.. it was true.");
+	}
 
-        <div class="dialog" id="Skills" title="Skills">
-            <label>Programming </label>
-            <p>
-              Python | Java | C | R | Matlab | bash
-            </p>
+var Question9 = prompt("True/false: proteins make up the boundary called the cell membrane");
+if (Question9 == "False")	{
+	alert("Correct! Lipids make up the boundary, not proteins.");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Sorry - trick question there, lipids make up the cell membrane.");
+	}
 
-            <hr>
-            
-            <label>Web Programming </label>
-            <p>
-                Javascript | Harp.js | HTML | PHP
-            </p>
+var Question10 = prompt("True/false: Polysaccharides are always made up of three monomers");
+if (Question10 == "False")	{
+	alert("Correct! Way to end strong!");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Incorrect, poly means many.");
+	}
+var FinalQuizGrade = QuizGrade*10;
+alert("RESULTS: " + FinalQuizGrade + "%");	
 
-            <hr>
-            
-            <label>Services </label>
-            
-            <p>
-                Github | Intellij IDEA
-            </p>
-            <hr>
-            
-            <label>Systems </label>
-            
-            <p>
-                Fedora | MacOS
-            </p>
-            
-            
-            
-        </div>
-
-        <div class="dialog" id="Thesis" title="Thesis">
-            <p>
-              In development ...
-            </p>
-        </div>
-
-
-        <div class="dialog" id="Projects" title="Projects">
-            <label> Genetic Sequence Application </label>
-           <p> 
-          <a href="https://www.dropbox.com/scl/fi/cainesljy1sfb0nenvcwl/curation_app.mov?dl=0&oref=e&r=AAXOhvTRSaGhcPS65FHyae-E9MNWjKRRVpaz9upQz6NY2n8_1ggAEWDBG8kUc5H-lqeHgX8-2ikSfsMB10rk4I1Wuowihkn4c8n32JWa8JzrvKdM1npMpvphNX_-b_vWiW3TS8H6aFWd1sg1UJkmUNk7UDZNIo6GlyU-Fkhuz2hOrQ&sm=1">
-            <img border="20" alt="W3Schools" src="img/app1.png" width ="400" height="200">            
-          </p>
-        </div>
-    </div>
+}
+   
+   
+</script>
 </body>
 
 </html>
