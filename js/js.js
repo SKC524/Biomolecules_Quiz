@@ -1,135 +1,150 @@
-var $menuOpt = [ "Skills", "Courses", "Thesis", "Projects" ];
-var $keyWords = [ "developer.", "researcher.", "student." ];
+function Quiz ()	{
+var StudyingTip = " I would recommend studying: ";
 
-var buildMenu = function(options) {
-	for(i = 0; i < options.length; i++){
-		// button tag
-		var title = options[i];
-		var button = $('<li/>').addClass("button");
-		$(".buttons-container").append(button);
+var QuizGrade = 0;
 
-		// icon
-		var idFormatted = "#" + options[i];
-		var img = "img/" + title + ".png"
-		var icon = $('<img/>')
-		    .attr("src", img)
-		    .attr("data-id", idFormatted)
-		    .addClass("button-icon");
-		button.append(icon);
+if(confirm("Would you like to start the biomolecules quiz?") == false)	{
+return;
+}
 
-		// label 
-		var label = "<br><label class='button-label'>" + title + "</label>"
-		button.append(label);
-    };
-};
-
-// Text animation
-var txtRotateInit = function(el, toRotate, period) {
-	this.toRotate = toRotate;
-	this.el = el;
-	this.loopNum = 0;
-	this.period = parseInt(period, 10) || 2000;
-	this.txt = '';
-	this.tick();
-	this.isDeleting = false;
-};
-
-txtRotateInit.prototype.tick = function() {
-	var i = this.loopNum % this.toRotate.length;
-	var fullTxt = this.toRotate[i];
-
-	if (this.isDeleting) {
-		this.txt = fullTxt.substring(0, this.txt.length - 1);
-	} else {
-		this.txt = fullTxt.substring(0, this.txt.length + 1);
+var Question1 = prompt("How many types of biomolecules are there?");
+if (Question1 == null)	{ return;}
+if (Question1 == 4)	{
+	alert("That is correct");
+	QuizGrade += 1;
 	}
-
-	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-	var that = this;
-	var delta = 150 - Math.random() * 100; // delete speed
-
-	if (this.isDeleting) { delta /= 2; }
-
-	if (!this.isDeleting && this.txt === fullTxt) {
-		delta = this.period;
-		this.isDeleting = true;
-	} else if (this.isDeleting && this.txt === '') {
-		this.isDeleting = false;
-		this.loopNum++;
-		delta = 200;
-	}
-
-	setTimeout(function() {
-		that.tick();
-	}, delta);
-};
-
-var textTyping = function() {
-	var elements = document.getElementsByClassName("txt-rotate");
-	for (var i=0; i<elements.length; i++) {
-		var toRotate = $keyWords;
-		var period = 1000;
-		if (toRotate) {
-			new txtRotateInit(elements[i], toRotate, period);
-		}
+	else	{
+	alert("Oops that's incorrect. The correct answer was 4.");
+	StudyingTip += "Biomolecules overview, ";
 	}
 	
-	var css = document.createElement("style");
-	css.type = "text/css";
-	css.innerHTML = ".txt-rotate > .wrap { border-right: 10px solid #ff5050 }";
-	document.body.appendChild(css);
-};
+var Question2 = prompt("What is the name of the simplest sugar");
+if (Question2 == null)	{ return;	}
+Question2 = Question2.toLowerCase();
+if (Question2 == "glucose")	{
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else if (Question2 == "fructose"){
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else {
+	alert("Oops that's incorrect, the correct answer was either fructose or glucose.");
+	StudyingTip += "Carbohydrates overview, ";
+	}
+	
+var Question3 = prompt("What is the monomer for proteins?");
+if (Question3 == null)	{ return; }
+Question3 = Question3.toLowerCase();
+if (Question3 == "amino acids")	{
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else if(Question3 == "amino acid")	{
+	alert("That is correct");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops that's incorrect, the correct answer was amino acids.");
+	StudyingTip += "Proteins overview, ";
+	}
+	
+var Question4 = prompt("What type of carbohydrate is made up of two of the simplest sugar molecules bonded together?");
+Question4 = Question4.toLowerCase();
+if (Question4 == null)	{ return; }
+if (Question4 == "disaccharide")	{
+	alert("Good - tough question");
+	QuizGrade += 1;
+	}
+	else if(Question4 == "disaccharides")	{
+	alert("Good - tough question");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Better luck next time. The correct answer was Disaccharide (spelling counts - sorry)");
+	StudyingTip += "Carbohydrate disaccharide section, "
+	}
+	
+alert("Halfway there!");
+var Question5 = prompt("true/false: Carbon has 4 valance electrons, enabling it to engage in 4 separate covalent bonds.");
+if (Question5 == null)	{ return;  }
+Question5 = Question5.toLowerCase();
+if (Question5 == "true")	{
+	alert("That's correct");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops the answer was true");
+	StudyingTip += "4 biomolecules overview , ";
+	}
+	
+var Question6 = prompt("true/false: Glycogen is an example of a disaccharide.");
+if (Question6 == null)	{ return;  }
+Question6 = Question6.toLowerCase();
+if (Question6 == "false")	{
+	alert("Your answer was correct.");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Oops the statement was false; glycogen is a polysaccharide.");
+	StudyingTip += "Carbohydrates polymer section, ";
+	}
+	
+var Question7 = prompt("True/false: Proteins aid in chemical signaling");
+if (Question7 == null)	{  return;  }
+Question7 = Question7.toLowerCase();
+if (Question7 == "true")	{
+	alert("Good job!");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("The correct answer was true");
+	StudyingTip += "Protein functions, ";
+	}
+	
+var Question8 = prompt("True/false: Dehydration refers to the loss of two hydrogens and an oxygen in the process of making more complex carbohydrates");	
+if (Question8 == null)	{  return;  }
+Question8 = Question8.toLowerCase();
+if (Question8 == "true")	{
+	alert("Good job");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("That was a tricky one.. it was true.");
+	StudyingTip += "Dehydration synthesis, ";
+	}
 
-$(document).ready(function() {
-	buildMenu($menuOpt);
-    textTyping();
+var Question9 = prompt("True/false: proteins make up the boundary called the cell membrane");
+if (Question9 == null)  {  return;  }
+Question9 = Question9.toLowerCase();
+if (Question9 == "false")	{
+	alert("Correct! Lipids make up the boundary, not proteins.");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Sorry - trick question there, lipids make up the cell membrane, not proteins.");
+	StudyingTip += "Phospholipid bilayer diagram and protein functions, ";
+	}
 
-    var blockMovements = function() {
-        var speed = 700;
-        var slowerSpeed = speed + 1200;
+var Question10 = prompt("True/false: Polysaccharides are always made up of three monomers");
+if (Question10 == null)	{	return;    }
+Question10 = Question10.toLowerCase();
+if (Question10 == "false")	{
+	alert("Correct! Way to end strong!");
+	QuizGrade += 1;
+	}
+	else	{
+	alert("Incorrect, poly means many.");
+	StudyingTip += "Poly/mono definitions.";
+	}
+var FinalQuizGrade = QuizGrade * 10;
+alert("RESULTS: " + FinalQuizGrade + "%");	
+if(QuizGrade < 10)	{
+alert("Studying tips based on what was answered incorrectly, in chronological order as they appeared in the quiz:" + StudyingTip);
+}
+else	{
+alert("Great job! You got everything right!!");
+}
 
-        $(".buttons-container").animate({left: $(".buttons-container").parent().width() / 2 - $(".buttons-container").width() / 2 }, speed);
-        $(".body-description").animate({right: '0px'}, speed);
-        $(".body-info").animate({top: '0px'}, speed );
-        $(".social-container").animate({bottom: '0px'}, slowerSpeed);
-    }
-
-    var generateDialogBox = function() {
-        var id = $(this).data('id');
-        $(".dialog").dialog({
-            autoOpen: false,
-            modal: true,
-            show: {
-                effect: "puff",
-                duration: 500
-            },
-            height: 500,
-            width: 700,
-            dialogClass: "no-close",
-            buttons: [
-                {
-                  text: "Close",
-                  click: function() {
-                    $( this ).dialog( "close" );
-                  }
-                }
-            ]
-/*
-            edits to be done
-            position => center of page
-            height/ width are functions of page size with min and max established*/
-        });
-    };
-
-    var dialogAnimation = function() {
-        $(".button-icon").click(function() {
-            var id = $(this).data('id');
-            $(id).dialog("open");
-        });
-    };
-
-    blockMovements();
-    generateDialogBox();
-    dialogAnimation();
-});
+}
